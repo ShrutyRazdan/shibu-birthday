@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Shibu 🎂</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f7, #f0edff, #eaf9ff);
+            color: #2d2640;
+            overflow-x: hidden;
+        }
+
+        /* ================= OPENING SCREEN ================= */
+
+        #opening {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #ff9fc9,
+                    #8067e9 70%,
+                    #51428f
+                );
+
+            transition: 0.8s;
+        }
+
+        .open-card {
+            max-width: 650px;
+        }
+
+        .gift {
+            font-size: 80px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .open-card h1 {
+            font-size: clamp(2.5rem, 9vw, 5rem);
+            margin: 12px 0;
+        }
+
+        .open-card p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ================= BUTTON ================= */
+
+        button {
+            border: none;
+            border-radius: 999px;
+
+            padding: 14px 25px;
+
+            font-size: 1rem;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background: white;
+            color: #674bc0;
+
+            box-shadow: 0 10px 30px #0003;
+
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            z-index: 20;
+
+            text-align: center;
+
+            padding: 13px;
+
+            background: #ffffffdf;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 2px 15px #0001;
+        }
+
+        nav a {
+            margin: 0 9px;
+
+            text-decoration: none;
+
+            color: #6247a5;
+
+            font-weight: bold;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 80px 20px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .badge {
+            background: white;
+
+            padding: 9px 16px;
+
+            border-radius: 30px;
+
+            color: #724ebd;
+
+            font-weight: bold;
+        }
+
+        .heart {
+            font-size: 55px;
+
+            margin-top: 20px;
+
+            animation: pulse 1.2s infinite;
+        }
+
+        .hero h2 {
+            font-size: clamp(3rem, 10vw, 7rem);
+
+            margin: 10px 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff4d9a,
+                    #704de8
+                );
+
+            color: transparent;
+
+            background-clip: text;
+        }
+
+        .hero p {
+            max-width: 700px;
+
+            font-size: 1.2rem;
+
+            line-height: 1.7;
+        }
+
+        /* ================= TITLES ================= */
+
+        .title {
+            text-align: center;
+
+            font-size: 2.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #71697e;
+
+            margin-bottom: 35px;
+        }
+
+        /* ================= MESSAGE ================= */
+
+        .message {
+            background: white;
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            line-height: 1.8;
+
+            font-size: 1.08rem;
+
+            box-shadow: 0 15px 50px #0001;
+        }
+
+        /* ================= PHOTO GALLERY ================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 18px;
+        }
+
+        .photo {
+            height: 270px;
+
+            border-radius: 22px;
+
+            background: #eee;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            position: relative;
+
+            box-shadow: 0 12px 30px #0001;
+        }
+
+        .photo img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .photo span {
+            background: #ffffffdd;
+
+            padding: 10px 14px;
+
+            border-radius: 20px;
+        }
+
+        /* ================= FUNNY CARDS ================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(210px, 1fr)
+                );
+
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            box-shadow: 0 12px 35px #0001;
+        }
+
+        .card .big {
+            font-size: 42px;
+
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #684db8;
+
+            margin-bottom: 8px;
+        }
+
+        /* ================= FINAL SURPRISE ================= */
+
+        .final {
+            text-align: center;
+        }
+
+        .final-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff589f,
+                    #7254e9
+                );
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 55px 25px;
+
+            box-shadow: 0 20px 60px #0002;
+        }
+
+        .final-box h2 {
+            font-size: 3rem;
+
+            margin: 15px 0;
+        }
+
+        .final-box p {
+            font-size: 1.2rem;
+
+            line-height: 1.8;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 45px 20px;
+
+            background: #29233a;
+
+            color: white;
+        }
+
+        /* ================= MUSIC ================= */
+
+        #musicBtn {
+            position: fixed;
+
+            right: 18px;
+
+            bottom: 18px;
+
+            z-index: 30;
+
+            margin: 0;
+        }
+
+        /* ================= BALLOONS ================= */
+
+        .balloon {
+            position: fixed;
+
+            bottom: -100px;
+
+            font-size: 55px;
+
+            z-index: 5;
+
+            animation:
+                float 9s linear infinite;
+
+            pointer-events: none;
+        }
+
+        .b1 {
+            left: 8%;
+        }
+
+        .b2 {
+            left: 30%;
+
+            animation-delay: 2s;
+        }
+
+        .b3 {
+            left: 55%;
+
+            animation-delay: 4s;
+        }
+
+        .b4 {
+            left: 80%;
+
+            animation-delay: 1s;
+        }
+
+        /* ================= CONFETTI ================= */
+
+        .confetti {
+            position: fixed;
+
+            top: -20px;
+
+            width: 9px;
+
+            height: 14px;
+
+            z-index: 200;
+
+            animation:
+                fall 3s linear forwards;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes bounce {
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+        }
+
+        @keyframes pulse {
+
+            50% {
+                transform: scale(1.2);
+            }
+
+        }
+
+        @keyframes float {
+
+            to {
+                transform:
+                    translateY(-120vh)
+                    rotate(360deg);
+            }
+
+        }
+
+        @keyframes fall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity: 0;
+            }
+
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            nav a {
+                font-size: 0.82rem;
+
+                margin: 0 4px;
+            }
+
+            .message {
+                padding: 24px;
+            }
+
+            .final-box h2 {
+                font-size: 2.3rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                    OPENING SCREEN
+===================================================== -->
+
+<div id="opening">
+
+    <div class="open-card">
+
+        <div class="gift">
+            🎁
+        </div>
+
+        <h1>
+            Hey Shibu! 👀
+        </h1>
+
+        <p>
+            Someone prepared a very important document about you...
+        </p>
+
+        <p>
+            <b>WARNING:</b>
+            It contains evidence that you're officially 26. 😂
+        </p>
+
+        <button onclick="openSurprise()">
+            Open Your Birthday Surprise 🎉
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                    BALLOONS
+===================================================== -->
+
+<div class="balloon b1">🎈</div>
+
+<div class="balloon b2">🎈</div>
+
+<div class="balloon b3">🎈</div>
+
+<div class="balloon b4">🎈</div>
+
+
+<!-- =====================================================
+                    NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#message">
+        Message
+    </a>
+
+    <a href="#memories">
+        Memories
+    </a>
+
+    <a href="#funny">
+        About Shibu
+    </a>
+
+    <a href="#final">
+        Surprise
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+                    MUSIC BUTTON
+===================================================== -->
+
+<button
+        id="musicBtn"
+        onclick="toggleMusic()">
+
+    🎵 Music
+
+</button>
+
+
+<!--
+
+    OPTIONAL MUSIC
+
+    Put your music file beside index.html:
+
+        birthday.mp3
+
+    Then uncomment the audio section below.
+
+-->
+
+<audio id="music" loop>
+
+    <source
+            src="birthday.mp3"
+            type="audio/mpeg">
+
+</audio>
+
+
+<!-- =====================================================
+                    HERO
+===================================================== -->
+
+<section
+        id="home"
+        class="hero">
+
+    <span class="badge">
+
+        15 • 08 • 2000
+        →
+        LEVEL 26 🎂
+
+    </span>
+
+
+    <div class="heart">
+
+        ❤️
+
+    </div>
+
+
+    <h2>
+
+        Happy Birthday
+        <br>
+
+        Shibu! 🎉
+
+    </h2>
+
+
+    <p>
+
+        Congratulations!
+
+        You've reached
+        <b>Level 26</b>.
+
+        Your childhood warranty has expired,
+        your maturity is still questionable,
+
+        and Chemmy is still stuck with you. 😂❤️
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+                    MESSAGE
+===================================================== -->
+
+<section id="message">
+
+    <h2 class="title">
+
+        A Message From Chemmy 💌
+
+    </h2>
+
+
+    <p class="subtitle">
+
+        Okay, enough roasting.
+
+        For approximately 30 seconds. 😌
+
+    </p>
+
+
+    <div class="message">
+
+        <p>
+            Dear Shibu,
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <b>
+                Happy 26th Birthday! 🎂🥳
+            </b>
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            You're annoying, dramatic,
+            sometimes impossible to understand...
+
+            but unfortunately,
+
+            you're still my brother
+
+            and I have to keep you. 😂
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Jokes apart,
+
+            I hope this year brings you
+            lots of happiness,
+
+            success,
+
+            crazy adventures,
+
+            and enough money
+
+            to finally start treating Chemmy. 😎
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Keep smiling,
+
+            keep being your crazy self,
+
+            and don't become
+            <i>too</i> mature
+
+            just because you're 26.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <b>
+                Happy Birthday, Shibu! ❤️
+            </b>
+
+        </p>
+
+
+        <p>
+            — Chemmy
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    MEMORIES
+===================================================== -->
+
+<section id="memories">
+
+    <h2 class="title">
+
+        Our Memories 📸
+
+    </h2>
+
+
+    <p class="subtitle">
+
+        Replace these boxes with your photos.
+
+    </p>
+
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="img/shibu1.jpeg" alt="Shibu">
+        </div>
+
+        <div class="photo">
+            <img src="img/shibu2.jpeg" alt="Shibu">
+        </div>
+
+        <div class="photo">
+            <img src="img/shibu3.jpeg" alt="Shibu">
+        </div>
+
+        <div class="photo">
+            <img src="img/shibu4.jpeg" alt="Shibu">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    FUNNY SECTION
+===================================================== -->
+
+<section id="funny">
+
+    <h2 class="title">
+
+        Things About Shibu 😂
+
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="big">
+                😂
+            </div>
+
+            <h3>
+                Professional Annoyer
+            </h3>
+
+            <p>
+
+                26 years of experience.
+
+                Still undefeated.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="big">
+                😎
+            </div>
+
+            <h3>
+                Too Cool
+            </h3>
+
+            <p>
+
+                Confidence level:
+
+                unnecessarily high.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="big">
+                🍕
+            </div>
+
+            <h3>
+                Food Expert
+            </h3>
+
+            <p>
+
+                Can become hungry
+
+                five minutes after eating.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="big">
+                ❤️
+            </div>
+
+            <h3>
+                Best Brother
+            </h3>
+
+            <p>
+
+                Okay fine...
+
+                you're actually pretty awesome.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    FINAL SURPRISE
+===================================================== -->
+
+<section id="final">
+
+    <div class="final-box">
+
+        <div style="font-size:65px">
+
+            🎁🥳🎂
+
+        </div>
+
+
+        <h2>
+
+            One Last Thing...
+
+        </h2>
+
+
+        <p>
+
+            No matter how old you get,
+
+            you'll always be my annoying brother. 😂
+
+            <br><br>
+
+            <b>
+                Love you, Bro!
+            </b>
+
+            <br><br>
+
+            Now go eat some cake
+
+            before Chemmy finishes it. 🍰
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+                    FOOTER
+===================================================== -->
+
+<footer>
+
+    Made with ❤️ by Chemmy
+
+    for Shibu's 26th Birthday 🎂
+
+</footer>
+
+
+<!-- =====================================================
+                    JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* ==========================================
+            OPEN BIRTHDAY SURPRISE
+    ========================================== */
+
+    function openSurprise() {
+
+        const opening =
+            document.getElementById("opening");
+
+
+        opening.classList.add("hidden");
+
+
+        launchConfetti();
+
+
+        setTimeout(() => {
+
+            opening.remove();
+
+        }, 900);
+
+
+        const music =
+            document.getElementById("music");
+
+
+        music.play().catch(() => {
+
+            console.log(
+                "Browser blocked autoplay."
+            );
+
+        });
+
+    }
+
+
+    /* ==========================================
+            MUSIC
+    ========================================== */
+
+    function toggleMusic() {
+
+        const music =
+            document.getElementById("music");
+
+
+        const button =
+            document.getElementById("musicBtn");
+
+
+        if (music.paused) {
+
+            music.play();
+
+            button.textContent =
+                "🔊 Music On";
+
+        }
+
+        else {
+
+            music.pause();
+
+            button.textContent =
+                "🔇 Music Off";
+
+        }
+
+    }
+
+
+    /* ==========================================
+            CONFETTI
+    ========================================== */
+
+    function launchConfetti() {
+
+
+        for (
+            let i = 0;
+            i < 120;
+            i++
+        ) {
+
+
+            const confetti =
+                document.createElement("div");
+
+
+            confetti.className =
+                "confetti";
+
+
+            confetti.style.left =
+                Math.random() * 100 + "vw";
+
+
+            confetti.style.background =
+                `hsl(${Math.random() * 360},
+                80%,
+                60%)`;
+
+
+            confetti.style.animationDelay =
+                Math.random() * 1.5 + "s";
+
+
+            document.body.appendChild(
+                confetti
+            );
+
+
+            setTimeout(() => {
+
+                confetti.remove();
+
+            }, 4500);
+
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
