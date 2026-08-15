@@ -24,8 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* ================= OPENING SCREEN ================= */
-
         #opening {
             position: fixed;
             inset: 0;
@@ -74,8 +72,6 @@
             pointer-events: none;
         }
 
-        /* ================= BUTTON ================= */
-
         button {
             border: none;
             border-radius: 999px;
@@ -98,8 +94,6 @@
         button:hover {
             transform: translateY(-3px) scale(1.03);
         }
-
-        /* ================= NAVBAR ================= */
 
         nav {
             position: sticky;
@@ -128,8 +122,6 @@
             font-weight: bold;
         }
 
-        /* ================= SECTIONS ================= */
-
         section {
             max-width: 1050px;
 
@@ -137,8 +129,6 @@
 
             padding: 80px 20px;
         }
-
-        /* ================= HERO ================= */
 
         .hero {
             min-height: 90vh;
@@ -199,8 +189,6 @@
             line-height: 1.7;
         }
 
-        /* ================= TITLES ================= */
-
         .title {
             text-align: center;
 
@@ -217,8 +205,6 @@
             margin-bottom: 35px;
         }
 
-        /* ================= MESSAGE ================= */
-
         .message {
             background: white;
 
@@ -232,8 +218,6 @@
 
             box-shadow: 0 15px 50px #0001;
         }
-
-        /* ================= PHOTO GALLERY ================= */
 
         .gallery {
             display: grid;
@@ -283,8 +267,6 @@
             border-radius: 20px;
         }
 
-        /* ================= FUNNY CARDS ================= */
-
         .cards {
             display: grid;
 
@@ -321,8 +303,6 @@
             margin-bottom: 8px;
         }
 
-        /* ================= FINAL SURPRISE ================= */
-
         .final {
             text-align: center;
         }
@@ -356,8 +336,6 @@
             line-height: 1.8;
         }
 
-        /* ================= FOOTER ================= */
-
         footer {
             text-align: center;
 
@@ -367,8 +345,6 @@
 
             color: white;
         }
-
-        /* ================= MUSIC ================= */
 
         #musicBtn {
             position: fixed;
@@ -381,8 +357,6 @@
 
             margin: 0;
         }
-
-        /* ================= BALLOONS ================= */
 
         .balloon {
             position: fixed;
@@ -421,8 +395,6 @@
             animation-delay: 1s;
         }
 
-        /* ================= CONFETTI ================= */
-
         .confetti {
             position: fixed;
 
@@ -437,8 +409,6 @@
             animation:
                 fall 3s linear forwards;
         }
-
-        /* ================= ANIMATIONS ================= */
 
         @keyframes bounce {
 
@@ -478,8 +448,6 @@
 
         }
 
-        /* ================= MOBILE ================= */
-
         @media (max-width: 600px) {
 
             nav a {
@@ -503,11 +471,6 @@
 
 
 <body>
-
-
-<!-- =====================================================
-                    OPENING SCREEN
-===================================================== -->
 
 <div id="opening">
 
@@ -538,11 +501,6 @@
 
 </div>
 
-
-<!-- =====================================================
-                    BALLOONS
-===================================================== -->
-
 <div class="balloon b1">🎈</div>
 
 <div class="balloon b2">🎈</div>
@@ -550,11 +508,6 @@
 <div class="balloon b3">🎈</div>
 
 <div class="balloon b4">🎈</div>
-
-
-<!-- =====================================================
-                    NAVIGATION
-===================================================== -->
 
 <nav>
 
@@ -580,11 +533,6 @@
 
 </nav>
 
-
-<!-- =====================================================
-                    MUSIC BUTTON
-===================================================== -->
-
 <button
         id="musicBtn"
         onclick="toggleMusic()">
@@ -593,19 +541,6 @@
 
 </button>
 
-
-<!--
-
-    OPTIONAL MUSIC
-
-    Put your music file beside index.html:
-
-        birthday.mp3
-
-    Then uncomment the audio section below.
-
--->
-
 <audio id="music" loop>
 
     <source
@@ -613,11 +548,6 @@
             type="audio/mpeg">
 
 </audio>
-
-
-<!-- =====================================================
-                    HERO
-===================================================== -->
 
 <section
         id="home"
@@ -659,22 +589,18 @@
         Your childhood warranty has expired,
         your maturity is still questionable,
 
-        and Chemmy is still stuck with you. 😂❤️
+        and Shruty is still stuck with you. 😂❤️
 
     </p>
 
 </section>
 
 
-<!-- =====================================================
-                    MESSAGE
-===================================================== -->
-
 <section id="message">
 
     <h2 class="title">
 
-        A Message From Chemmy 💌
+        A Message From Shruty 💌
 
     </h2>
 
@@ -740,7 +666,7 @@
 
             and enough money
 
-            to finally start treating Chemmy. 😎
+            to finally start treating Shruty. 😎
 
         </p>
 
@@ -775,17 +701,12 @@
 
 
         <p>
-            — Chemmy
+            — Shruty
         </p>
 
     </div>
 
 </section>
-
-
-<!-- =====================================================
-                    MEMORIES
-===================================================== -->
 
 <section id="memories">
 
@@ -794,15 +715,7 @@
         Our Memories 📸
 
     </h2>
-
-
-    <p class="subtitle">
-
-        Replace these boxes with your photos.
-
-    </p>
-
-
+    
     <div class="gallery">
 
         <div class="photo">
@@ -825,10 +738,6 @@
 
 </section>
 
-
-<!-- =====================================================
-                    FUNNY SECTION
-===================================================== -->
 
 <section id="funny">
 
@@ -930,11 +839,6 @@
 
 </section>
 
-
-<!-- =====================================================
-                    FINAL SURPRISE
-===================================================== -->
-
 <section id="final">
 
     <div class="final-box">
@@ -969,7 +873,7 @@
 
             Now go eat some cake
 
-            before Chemmy finishes it. 🍰
+            before Shruty finishes it. 🍰
 
         </p>
 
@@ -977,30 +881,16 @@
 
 </section>
 
-
-<!-- =====================================================
-                    FOOTER
-===================================================== -->
-
 <footer>
 
-    Made with ❤️ by Chemmy
+    Made with ❤️ by Shruty
 
     for Shibu's 26th Birthday 🎂
 
 </footer>
 
-
-<!-- =====================================================
-                    JAVASCRIPT
-===================================================== -->
-
 <script>
 
-
-    /* ==========================================
-            OPEN BIRTHDAY SURPRISE
-    ========================================== */
 
     function openSurprise() {
 
@@ -1035,11 +925,6 @@
 
     }
 
-
-    /* ==========================================
-            MUSIC
-    ========================================== */
-
     function toggleMusic() {
 
         const music =
@@ -1069,11 +954,6 @@
         }
 
     }
-
-
-    /* ==========================================
-            CONFETTI
-    ========================================== */
 
     function launchConfetti() {
 
@@ -1122,9 +1002,6 @@
 
     }
 
-
 </script>
-
-
 </body>
 </html>
